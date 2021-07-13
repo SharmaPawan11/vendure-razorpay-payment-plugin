@@ -14,12 +14,12 @@ This plugin have inside it a lot of stuff:
 
 ### 2. Install the package
 ```bash
-npm install vendure-razorpay-plugin --save
+npm install vendure-razorpay-payment-plugin --save
 ```
 
 ### 3. Add the plugin in Vendure configuration
 ```typescript
-import { RazorpayPlugin } from 'vendure-razorpay-plugin';
+import { RazorpayPlugin } from 'vendure-razorpay-payment-plugin';
 const config: VendureConfig = {
   ...
   plugins: [
