@@ -1,6 +1,6 @@
 # Vendure Razorpay Plugin
 
-💳 A plugin to enable Razorpay as a payment provider for Vendure
+💳 A plugin to enable Razorpay as a payment provider for Vendure E-commerce
 
 ## 🌟 Feature
 This plugin have inside it a lot of stuff:
