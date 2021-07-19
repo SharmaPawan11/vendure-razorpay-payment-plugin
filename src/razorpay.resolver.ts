@@ -49,7 +49,7 @@ export class RazorpayResolver {
                 const razorPayOrder = await this.createRazorpayOrder(
                     razorpayClient,
                     {
-                        amount: order.subTotalWithTax,
+                        amount: order.totalWithTax,
                         currency: "INR",
                     }
                 );
