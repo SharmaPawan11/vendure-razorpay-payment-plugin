@@ -43,6 +43,7 @@ export const razorpayPaymentMethodHandler = new PaymentMethodHandler({
                     state: "Declined" as const,
                     transactionId: razorpayPaymentId,
                     errorMessage: "SIGNATURE MISMATCH",
+                    metadata
                 };
             }
 
@@ -58,6 +59,7 @@ export const razorpayPaymentMethodHandler = new PaymentMethodHandler({
                     state: "Declined" as const,
                     transactionId: razorpayPaymentId,
                     errorMessage: "NO PAYMENT FOUND FOR GIVEN ORDER ID",
+                    metadata
                 };
             }
 
@@ -71,6 +73,7 @@ export const razorpayPaymentMethodHandler = new PaymentMethodHandler({
                     amount: amount,
                     state: "Settled" as const,
                     transactionId: razorpayPaymentId,
+                    metadata
                 };
             } else {
                 return {
@@ -78,6 +81,7 @@ export const razorpayPaymentMethodHandler = new PaymentMethodHandler({
                     state: "Declined" as const,
                     transactionId: razorpayPaymentId,
                     errorMessage: "AMOUNT MISMATCH",
+                    metadata
                 };
             }
         } catch (e) {
@@ -86,7 +90,7 @@ export const razorpayPaymentMethodHandler = new PaymentMethodHandler({
                 state: "Error" as const,
                 transactionId: "",
                 errorMessage: e.toString(),
-                metadata: e,
+                metadata,
             };
         }
     },
