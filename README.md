@@ -418,7 +418,7 @@ openRazorpayPopup(razorpayOrderId: string) {
 }
 ```
 
-Check razorpay docs [here](https://razorpay.com/docs/payment-gateway/web-integration/standard//) 
+Check razorpay docs [here](https://razorpay.com/docs/payment-gateway/web-integration/standard/) 
 
 
 ## 😍 Do you like?
