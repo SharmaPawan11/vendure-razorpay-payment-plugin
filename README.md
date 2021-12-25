@@ -256,15 +256,11 @@ get Razorpay() {
 }
 ```
 
-### 5. Set razorpay order id (which you got from above mutation) in options variable.
+
+### 5. Construct `success` and `manualClose` callbacks
 <br>
 
-
-
-### 6. Construct `success` and `manualClose` callbacks
-<br>
-
-&nbsp;&nbsp;&nbsp;&nbsp;6.1 Get a reference to Angular changeDetector and NgZone
+&nbsp;&nbsp;&nbsp;&nbsp;5.1 Get a reference to Angular changeDetector and NgZone
 
 &nbsp;&nbsp;&nbsp;&nbsp;checkout.component.ts
 
@@ -279,7 +275,7 @@ constructor(
   }
 ```
 
-&nbsp;&nbsp;&nbsp;&nbsp;6.2 Construct the callbacks
+&nbsp;&nbsp;&nbsp;&nbsp;5.2 Construct the callbacks
 
 &nbsp;&nbsp;&nbsp;&nbsp;checkout.component.ts
 
@@ -369,7 +365,7 @@ const ADD_PAYMENT_TO_ORDER_MUTATION = gql`
 `;
 ```
 
-### 7. Set required things for checkout form options ( Sample code )
+### 6. Set required things for checkout form options ( Sample code )
 <br>
 
 razorpayService.ts
@@ -421,11 +417,8 @@ openRazorpayPopup(razorpayOrderId: string) {
   }
 }
 ```
-<br>
 
-
-
-
+Check razorpay docs [here](https://razorpay.com/docs/payment-gateway/web-integration/standard//) 
 
 
 ## 😍 Do you like?
