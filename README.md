@@ -1,17 +1,41 @@
-# Vendure Razorpay Plugin
 
-💳 A plugin to enable Razorpay as a payment provider for Vendure E-commerce
+<p align="center">
+  <a href="https://www.medusa-commerce.com">
+    <img alt="Medusa" src="https://www.vendure.io/branding/cube-logo-300.png" width="100" />
+  </a>
+  <a href="https://strapi.io/">
+    <img alt="Medusa" src="https://razorpay.com/blog-content/uploads/2020/10/rzp-glyph-positive.png" width="100" />
+  </a>
+</p>
+<h1 align="center">
+  Vendure Razorpay Plugin
+</h1>
+<p align="center">
+A plugin to enable Razorpay as a payment provider for Vendure E-commerce
+</p>
 
-<br>
 
+<p align="center">
+  <a href="https://github.com/vendure-ecommerce/vendure/blob/master/LICENSE">
+    <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="Vendure is released under the MIT license." />
+  </a>
+  <a href="https://github.com/vendure-ecommerce/vendure/blob/master/CONTRIBUTING.md">
+    <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat" alt="PRs welcome!" />
+  </a>
+  <a href="https://twitter.com/intent/follow?screen_name=vendure_io">
+    <img src="https://img.shields.io/twitter/follow/vendure_io.svg?label=Follow%20@vendure_io" alt="Follow @vendure_io" />
+  </a>
+  <a href="https://www.npmjs.com/package/vendure-razorpay-payment-plugin">
+    <img src="https://img.shields.io/npm/v/vendure-razorpay-payment-plugin" alt="PRs welcome!" />
+  </a>
+
+</p>
 
 ## 🌟 Feature
 This plugin have inside it a lot of stuff:
 - A **[`PaymentMethodHandler`](https://www.vendure.io/docs/typescript-api/payment/payment-method-handler/) to createPayments** and configure Razorpay transaction
 - A **[custom field](https://www.vendure.io/docs/developer-guide/customizing-models/#customizing-models-with-custom-fields) `customFieldsRazorpay_order_id`** on Order to set razorpayOrderId for corresponding vendure order id. 
 - Refund payments in Admin UI
-
-<br>
 
 ## ⚙️ Install
 ### 1. Install and configure Vendure
@@ -41,7 +65,6 @@ You will need to enable and configure the options to make work. You can edit thi
 ### 5. Enjoy!
 It's done!
 
-<br> 
 
 ## ⚙️ Frontend Setup ( Angular )
 

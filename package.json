@@ -1,6 +1,6 @@
 {
   "name": "vendure-razorpay-payment-plugin",
-  "version": "0.0.9",
+  "version": "0.0.11",
   "description": "",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -10,8 +10,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Deathwish98/vendure-razorpay-payment-plugin"
+  },
+  "author": "Pawan Sharma",
+  "license": "MIT",
   "dependencies": {
     "razorpay": "^2.0.6",
     "ts-node": "^10.1.0",
