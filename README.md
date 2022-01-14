@@ -6,8 +6,6 @@
 
 
 ## 🌟 Feature
-<br> 
-
 This plugin have inside it a lot of stuff:
 - A **[`PaymentMethodHandler`](https://www.vendure.io/docs/typescript-api/payment/payment-method-handler/) to createPayments** and configure Razorpay transaction
 - A **[custom field](https://www.vendure.io/docs/developer-guide/customizing-models/#customizing-models-with-custom-fields) `customFieldsRazorpay_order_id`** on Order to set razorpayOrderId for corresponding vendure order id. 
@@ -16,20 +14,13 @@ This plugin have inside it a lot of stuff:
 <br>
 
 ## ⚙️ Install
-
-<br>
-
 ### 1. Install and configure Vendure
 [Here](https://www.vendure.io/docs/getting-started/) you can find out how to install
-
-<br>
 
 ### 2. Install the package
 ```bash
 npm install vendure-razorpay-payment-plugin --save
 ```
-
-<br>
 
 ### 3. Add the plugin in Vendure configuration
 ```typescript
@@ -42,14 +33,10 @@ const config: VendureConfig = {
 }
 ```
 
-<br>
 
 
 ### 4. Configure RazorPay
 You will need to enable and configure the options to make work. You can edit this in _Payment Method_ section in Vendure Admin UI
-
-<br>
-
 
 ### 5. Enjoy!
 It's done!
@@ -61,13 +48,13 @@ It's done!
 
 ### 1. Add razorpay script 
 
-```
+```js
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 ```
 
 or load it on-demand for performance reasons like this.
 
-```
+```ts
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -109,13 +96,13 @@ export class ScriptService {
   }
 }
 ```
-```
+```ts
 const isScriptLoaded = await this.scriptService.loadScript('razorpay');
 ```
 
 ### 2. Set checkout form options accordingly - 
 
-```
+```ts
 private _razorpayOptions = {
   key: environment.razorpayId,
   order_id: '',
@@ -190,8 +177,8 @@ private _razorpayOptions = {
 
 ### 3. Generate Razorpay order id by calling mutation from plugin ( Order must be in "ArrangingPayment" state )
 
-razorpayService.ts
-```
+`razorpayService.ts`
+```ts
 const GENERATE_RAZORPAY_ORDER_ID = gql`
   mutation generateRazorpayOrderId($vendureOrderId: ID!) {
     generateRazorpayOrderId(orderId: $vendureOrderId) {
@@ -216,8 +203,8 @@ generateRazorpayOrderId(vendureOrderId: string | number) {
 }
 ```
 
-checkout.component.ts
-```
+`checkout.component.ts`
+```ts
 this.orderService.generateRazorpayOrderId(this.orderDetails.id).pipe(
   this.updateOrderDetailsGlobally.operator(),
     takeUntil(this.destroy$)
@@ -245,7 +232,7 @@ onRazorpayIdGeneration(res: any) {
 
 ### 4. Get Razorpay class
 
-```
+```ts
 get Razorpay() {
   if (!(window as any).Razorpay) {
     throw new Error(
@@ -258,13 +245,12 @@ get Razorpay() {
 
 
 ### 5. Construct `success` and `manualClose` callbacks
-<br>
 
 &nbsp;&nbsp;&nbsp;&nbsp;5.1 Get a reference to Angular changeDetector and NgZone
 
-&nbsp;&nbsp;&nbsp;&nbsp;checkout.component.ts
+&nbsp;&nbsp;&nbsp;&nbsp;`checkout.component.ts`
 
-```
+```ts
 constructor(
     ...
     private cd: ChangeDetectorRef,
@@ -277,9 +263,9 @@ constructor(
 
 &nbsp;&nbsp;&nbsp;&nbsp;5.2 Construct the callbacks
 
-&nbsp;&nbsp;&nbsp;&nbsp;checkout.component.ts
+&nbsp;&nbsp;&nbsp;&nbsp;`checkout.component.ts`
 
-```
+```ts
 onRazorpayPaymentSuccess(metadata: Object) {
   this.cd.detectChanges();
   this.orderService
@@ -317,9 +303,9 @@ onRazorpayManualClose() {
 
 ```
 
-&nbsp;&nbsp;&nbsp;&nbsp;razorpayService.ts
+&nbsp;&nbsp;&nbsp;&nbsp;`razorpayService.ts`
 
-```
+```ts
 addRazorpayPaymentToOrder(paymentMetadata: Object): Observable<Mutation["addPaymentToOrder"]> {
   const addPaymentMutationVariable = {
     paymentInput: {
@@ -336,9 +322,9 @@ addRazorpayPaymentToOrder(paymentMetadata: Object): Observable<Mutation["addPaym
 }
 ```
 
-&nbsp;&nbsp;&nbsp;&nbsp;where ADD_PAYMENT_TO_ORDER_MUTATION is -
+&nbsp;&nbsp;&nbsp;&nbsp;where `ADD_PAYMENT_TO_ORDER_MUTATION` is -
 
-```
+```ts
 const ADD_PAYMENT_TO_ORDER_MUTATION = gql`
   mutation addPaymentToOrder($paymentInput: PaymentInput!) {
     addPaymentToOrder(input: $paymentInput) {
@@ -366,10 +352,9 @@ const ADD_PAYMENT_TO_ORDER_MUTATION = gql`
 ```
 
 ### 6. Set required things for checkout form options ( Sample code )
-<br>
 
-razorpayService.ts
-```
+`razorpayService.ts`
+```ts
 get razorpayOptions() {
   return this._razorpayOptions;
 }
@@ -391,9 +376,9 @@ set razorpayPrefill({
   };
 }
 ```
-checkout.component.ts
+`checkout.component.ts`
 
-```
+```ts
 openRazorpayPopup(razorpayOrderId: string) {
   try {
     const Razorpay = this.razorpayService.Razorpay;
