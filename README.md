@@ -1,10 +1,10 @@
 
 <p align="center">
-  <a href="https://www.medusa-commerce.com">
-    <img alt="Medusa" src="https://www.vendure.io/branding/cube-logo-300.png" width="100" />
+  <a href="https://www.vendure.io/">
+    <img alt="Vendure" src="https://www.vendure.io/branding/cube-logo-300.png" width="100" />
   </a>
-  <a href="https://strapi.io/">
-    <img alt="Medusa" src="https://razorpay.com/blog-content/uploads/2020/10/rzp-glyph-positive.png" width="100" />
+  <a href="https://razorpay.com/">
+    <img alt="Razorpay" src="https://razorpay.com/blog-content/uploads/2020/10/rzp-glyph-positive.png" width="100" />
   </a>
 </p>
 <h1 align="center">
