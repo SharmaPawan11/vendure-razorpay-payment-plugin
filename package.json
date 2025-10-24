@@ -1,6 +1,6 @@
 {
   "name": "vendure-razorpay-payment-plugin",
-  "version": "0.0.12",
+  "version": "0.0.14",
   "description": "",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -16,7 +16,9 @@
   },
   "author": "Pawan Sharma",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "razorpay": "^2.9.6"
+  },
   "devDependencies": {
     "prettier": "^3.6.1",
     "@types/node" : "^22.2.0",
