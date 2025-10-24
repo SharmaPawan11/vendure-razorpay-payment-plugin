@@ -33,13 +33,14 @@ A plugin to enable Razorpay as a payment provider for Vendure E-commerce
 
 ## 🌟 Feature
 This plugin have inside it a lot of stuff:
-- A **[`PaymentMethodHandler`](https://www.vendure.io/docs/typescript-api/payment/payment-method-handler/) to createPayments** and configure Razorpay transaction
-- A **[custom field](https://www.vendure.io/docs/developer-guide/customizing-models/#customizing-models-with-custom-fields) `customFieldsRazorpay_order_id`** on Order to set razorpayOrderId for corresponding vendure order id. 
+- A **[`PaymentMethodHandler`](https://docs.vendure.io/reference/typescript-api/payment/payment-method-handler/) to createPayments** and configure Razorpay transaction
+- A **[custom field](https://docs.vendure.io/guides/developer-guide/custom-fields/) `customFieldsRazorpay_order_id`** on Order to set razorpayOrderId for corresponding vendure order id. 
+
 - Refund payments in Admin UI
 
 ## ⚙️ Install
 ### 1. Install and configure Vendure
-[Here](https://www.vendure.io/docs/getting-started/) you can find out how to install
+[Here](https://docs.vendure.io/guides/getting-started/installation/) you can find out how to install
 
 ### 2. Install the package
 ```bash
@@ -56,11 +57,23 @@ const config: VendureConfig = {
   ]
 }
 ```
+If you are in production mode or have not set `synchronize: true` in your `dbConnectionOptions`, run
 
+```bash
+npx vendure migrate
+```
+
+You will need to do it twice, one to create a new migration, and one more to apply the migration(s) e.g. -
+
+Upon first run - Select "Generate a new migration".
+
+Upon second run - Select "Run pending migrations".
+
+ See [Vendure Developer Guide for Migration](https://docs.vendure.io/guides/developer-guide/migrations/) to learn more.
 
 
 ### 4. Configure RazorPay
-You will need to enable and configure the options to make work. You can edit this in _Payment Method_ section in Vendure Admin UI
+You will need to enable and configure the options to make the plugin work. You can edit this in _Payment Method_ section in Vendure Admin UI. 
 
 ### 5. Enjoy!
 It's done!

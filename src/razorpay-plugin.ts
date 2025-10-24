@@ -1,11 +1,12 @@
 import { PluginCommonModule, VendurePlugin } from "@vendure/core";
-import { gql } from "apollo-server-core";
+import { gql } from "graphql-tag";
 import { RazorpayResolver } from "./razorpay.resolver";
 import { razorpayPaymentMethodHandler } from "./razorpay-payment-method";
 
 @VendurePlugin({
     imports: [PluginCommonModule],
     providers: [],
+    compatibility: '^3.0.0',
     configuration: (config) => {
         config.customFields.Order.push({
             name: "razorpay_order_id",

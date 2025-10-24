@@ -1,9 +1,9 @@
-import * as Razorpay from "razorpay";
+import Razorpay from "razorpay";
 import { PaymentMethodArgsHash } from "./types";
 import * as crypto from "crypto";
 
 export function getRazorpayInstance(args: PaymentMethodArgsHash) {
-    return new Razorpay.default({
+    return new Razorpay({
         key_id: args.key_id,
         key_secret: args.key_secret,
     });

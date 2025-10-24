@@ -65,7 +65,7 @@ export class RazorpayResolver {
                     return successResponse;
                 }
             } catch (e) {
-                Logger.error(e);
+                Logger.error(String(e));
             }
         }
         return {

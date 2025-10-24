@@ -89,7 +89,7 @@ export const razorpayPaymentMethodHandler = new PaymentMethodHandler({
                 amount: order.total,
                 state: "Error" as const,
                 transactionId: "",
-                errorMessage: e.toString(),
+                errorMessage: String(e),
                 metadata,
             };
         }
