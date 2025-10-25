@@ -1,7 +1,7 @@
 
 <p align="center">
   <a href="https://www.vendure.io/">
-    <img alt="Vendure" src="https://www.vendure.io/branding/cube-logo-300.png" width="100" />
+    <img alt="Vendure" src="https://camo.githubusercontent.com/313cb07332b15ed0109228c7dfefc2833a09754946c21812d94b9d7dcd9ed3b1/68747470733a2f2f612e73746f7279626c6f6b2e636f6d2f662f3332383235372f363939783438302f386462623463376133632f6c6f676f2d69636f6e2e706e67" width="100" />
   </a>
   <a href="https://razorpay.com/">
     <img alt="Razorpay" src="https://razorpay.com/blog-content/uploads/2020/10/rzp-glyph-positive.png" width="100" />
